@@ -1,0 +1,133 @@
+--- /home/seann/Downloads/QNAP/qfinderpkg-orig/DEBIAN/preinst	2025-05-27 02:37:57.000000000 -0400
++++ /home/seann/Downloads/QNAP/qfinderpkg-fixed/DEBIAN/preinst	2025-07-02 08:06:49.732807569 -0400
+@@ -313,86 +313,67 @@
+ 	fi
+ fi
+ 
+-LSB_DESCRIPTION=$(lsb_release -d)
+-LSBS=($LSB_DESCRIPTION)
+-CURRENT_VERSION=${LSBS[2]}
+-CURRENT_VERS=(${CURRENT_VERSION//./ })
+-CURRENT_VER_MAJOR="${CURRENT_VERS[0]}"
+-CURRENT_VER_MINOR="${CURRENT_VERS[1]}"
+-CURRENT_VER_PATCH="${CURRENT_VERS[2]}"
+-
+-MINS=(${MIN_VER_STR//./ })
+-MIN_MAJOR="${MINS[0]}"
+-MIN_MINOR="${MINS[1]}"
+-MIN_PATCH="${MINS[2]}"
+-
+-MAXS=(${MAX_VER_STR//./ })
+-MAX_MAJOR="${MAXS[0]}"
+-MAX_MINOR="${MAXS[1]}"
+-MAX_PATCH="${MAXS[2]}"
+-
+-if [ -z "$MAX_VER_STR" ];
+-then
+-    SystemRequirementResult=1;
++LSB_DESCRIPTION=$(lsb_release -d | cut -f2)
++VERSION_REGEX='([0-9]+)\.([0-9]+)(\.([0-9]+))?'
++
++if [[ $LSB_DESCRIPTION =~ $VERSION_REGEX ]]; then
++  CURRENT_VER_MAJOR="${BASH_REMATCH[1]}"
++  CURRENT_VER_MINOR="${BASH_REMATCH[2]}"
++  CURRENT_VER_PATCH="${BASH_REMATCH[4]:-0}"
+ else
++  echo "Error: Unable to extract version from LSB description."
++  exit 1
++fi
++
++# Parse minimum version
++IFS='.' read -r MIN_MAJOR MIN_MINOR MIN_PATCH <<< "$MIN_VER_STR"
++MIN_PATCH="${MIN_PATCH:-0}"
++
++# Parse maximum version if defined
++if [ ! -z "$MAX_VER_STR" ]; then
++  IFS='.' read -r MAX_MAJOR MAX_MINOR MAX_PATCH <<< "$MAX_VER_STR"
++  MAX_PATCH="${MAX_PATCH:-0}"
++fi
++
++SystemRequirementResult=1
++
++# Check against MAX version
++if [ ! -z "$MAX_VER_STR" ]; then
+     CompareNum "$CURRENT_VER_MAJOR" "$MAX_MAJOR"
+-    if [ "$compareResult" == 1 ];
+-    then
+-        SystemRequirementResult=-1;
+-    elif [ "$compareResult" == 0 ];
+-    then
++    if [ "$compareResult" == 1 ]; then
++        SystemRequirementResult=-1
++    elif [ "$compareResult" == 0 ]; then
+         CompareNum "$CURRENT_VER_MINOR" "$MAX_MINOR"
+-        if [ "$compareResult" == 1 ];
+-        then
+-            SystemRequirementResult=-1;
+-        elif [ "$compareResult" == 0 ];
+-        then
++        if [ "$compareResult" == 1 ]; then
++            SystemRequirementResult=-1
++        elif [ "$compareResult" == 0 ]; then
+             CompareNum "$CURRENT_VER_PATCH" "$MAX_PATCH"
+-            if [ "$compareResult" == 1 ];
+-            then
+-                SystemRequirementResult=-1;
+-            else
+-                SystemRequirementResult=1;
++            if [ "$compareResult" == 1 ]; then
++                SystemRequirementResult=-1
+             fi
+-        else
+-            SystemRequirementResult=1;
+         fi
+-    else
+-        SystemRequirementResult=1;
+     fi
+ fi
+ 
+-if [ "$SystemRequirementResult" -gt 0 ] && [ ! -z "$MIN_MAJOR" ];
+-then
++# Check against MIN version
++if [ "$SystemRequirementResult" -gt 0 ]; then
+     CompareNum "$CURRENT_VER_MAJOR" "$MIN_MAJOR"
+-    if [ "$compareResult" == -1 ];
+-    then
+-        SystemRequirementResult=-1;
+-    elif [ "$compareResult" == 0 ];
+-    then
++    if [ "$compareResult" == -1 ]; then
++        SystemRequirementResult=-1
++    elif [ "$compareResult" == 0 ]; then
+         CompareNum "$CURRENT_VER_MINOR" "$MIN_MINOR"
+-        if [ "$compareResult" == -1 ];
+-        then
+-            SystemRequirementResult=-1;
+-        elif [ "$compareResult" == 0 ];
+-        then
++        if [ "$compareResult" == -1 ]; then
++            SystemRequirementResult=-1
++        elif [ "$compareResult" == 0 ]; then
+             CompareNum "$CURRENT_VER_PATCH" "$MIN_PATCH"
+-            if [ "$compareResult" == -1 ];
+-            then
+-                SystemRequirementResult=-1;
+-            else
+-                SystemRequirementResult=1;
++            if [ "$compareResult" == -1 ]; then
++                SystemRequirementResult=-1
+             fi
+-        else
+-            SystemRequirementResult=1;
+         fi
+-    else
+-        SystemRequirementResult=1;
+     fi
+ fi
+ 
+-if [ "$SystemRequirementResult" -lt 0 ];
+-then
++if [ "$SystemRequirementResult" -lt 0 ]; then
+     showSystemRequirementDialog
+     exit -1
+ fi

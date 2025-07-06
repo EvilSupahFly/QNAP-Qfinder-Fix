@@ -1,0 +1,22 @@
+#!/bin/bash
+
+DESKTOPDIR=$(xdg-user-dir DESKTOP)
+
+install -o $SUDO_UID -g $SUDO_GID -m 755 -d ~/.config/autostart || true
+if [ -f ~/.config/autostart/QNAPQfinderPro.desktop ]; then
+	rm ~/.config/autostart/QNAPQfinderPro.desktop || true
+fi
+
+install -o $SUDO_UID -g $SUDO_GID -m 755 /usr/share/applications/QNAPQfinderPro.desktop ~/.config/autostart/QNAPQfinderPro.desktop || true
+sed -i "s/QfinderPro.sh/QfinderPro.sh\ -s/g" ~/.config/autostart/QNAPQfinderPro.desktop
+
+desktop-file-install --dir=/usr/share/applications /usr/share/applications/QNAPQfinderPro.desktop || true
+install -o $SUDO_UID -g $SUDO_GID -m 755 /usr/share/applications/QNAPQfinderPro.desktop $DESKTOPDIR || true
+
+if [ -d /usr/local/share/QNAP/tmp ]; then
+	install -o $SUDO_UID -g $SUDO_GID -m 755 /usr/local/share/QNAP/tmp/Qfinder.conf ~/.config/QNAP/ &>/dev/null || true
+	install -o $SUDO_UID -g $SUDO_GID -m 755 -d ~/.local/share/QNAP || true
+	install -o $SUDO_UID -g $SUDO_GID -m 755 -d ~/.local/share/QNAP/QfinderPro || true
+	install -o $SUDO_UID -g $SUDO_GID -m 755 /usr/local/share/QNAP/tmp/wol.json ~/.local/share/QNAP/QfinderPro/ || true
+	rm -rf /usr/local/share/QNAP/tmp || true
+fi

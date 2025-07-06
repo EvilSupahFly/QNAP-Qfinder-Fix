@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Name=Qfinder Pro
+Exec=/usr/local/bin/QNAP/QfinderPro/QfinderPro.sh
+Type=Application
+Icon=QfinderPro

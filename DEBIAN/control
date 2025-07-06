@@ -1,0 +1,9 @@
+Version: 7.12.3.0527
+Package: QfinderPro
+Installed-Size: 324628
+Section: base
+Priority: optional
+Architecture: amd64
+Maintainer: QNAP Systems, Inc.
+Description: Discover new and convenient ways of using your NAS with QNAP Utilities.
+ Qfinder Pro is a utility that allows you to quickly search and manage your NAS under the same network.

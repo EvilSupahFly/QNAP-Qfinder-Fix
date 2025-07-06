@@ -1,0 +1,1833 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=big5">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:新細明體;
+	panose-1:2 2 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Segoe UI";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"\@新細明體";
+	panose-1:2 1 6 1 0 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:106%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+h1
+	{mso-style-link:"標題 1 字元";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	line-height:106%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:normal;}
+a:link, span.MsoHyperlink
+	{font-family:"Times New Roman",serif;
+	color:blue;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:24.0pt;
+	line-height:106%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.1
+	{mso-style-name:"標題 1 字元";
+	mso-style-link:"標題 1";
+	font-family:"Cambria",serif;
+	color:#365F91;}
+.MsoChpDefault
+	{font-size:11.0pt;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:106%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:0cm 0cm 0cm 0cm;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW link=blue vlink=purple style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoListParagraph style='margin-left:48.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-family:Wingdings'>l</span><span lang=EN-US
+style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif'>&nbsp;&nbsp;
+</span><span lang=EN-US><a href="#_OpenSSL"><span style='font-size:14.0pt;
+line-height:106%;font-family:"Segoe UI",sans-serif'>OpenSSL</span></a></span></p>
+
+<p class=MsoListParagraph style='margin-left:48.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-family:Wingdings'>l</span><span lang=EN-US
+style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif'>&nbsp;&nbsp;
+</span><span lang=EN-US><a href="#_Qt"><span style='font-size:14.0pt;
+line-height:106%;font-family:"Segoe UI",sans-serif'>Qt</span></a></span></p>
+
+<p class=MsoListParagraph style='margin-left:48.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-family:Wingdings'>l</span><span lang=EN-US
+style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif'>&nbsp;&nbsp;
+</span><span lang=EN-US><a href="#_SQLite"><span style='font-size:14.0pt;
+line-height:106%;font-family:"Segoe UI",sans-serif'>SQLite</span></a></span></p>
+
+<p class=MsoListParagraph style='margin-left:48.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-family:Wingdings'>l</span><span lang=EN-US
+style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif'>&nbsp;&nbsp;
+</span><span lang=EN-US><a href="#_quazip"><span style='font-size:14.0pt;
+line-height:106%;font-family:"Segoe UI",sans-serif'>quazip</span></a></span></p>
+
+<p class=MsoListParagraph style='margin-left:48.0pt;text-indent:-24.0pt'><span
+lang=EN-US style='font-family:Wingdings'>l</span><span lang=EN-US
+style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif'>&nbsp;&nbsp;
+</span><span lang=EN-US><a href="#_l__Cyptopp"><span style='font-size:14.0pt;
+line-height:106%;font-family:"Segoe UI",sans-serif'>Cryptopp</span></a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h1 style='margin-left:45.6pt;text-indent:-24.0pt'><a name="_OpenSSL"></a><span
+lang=EN-US style='font-family:Wingdings;color:windowtext'>l</span><span
+lang=EN-US style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif;
+color:windowtext'>&nbsp; </span><span lang=EN-US style='font-family:"Times New Roman",serif;
+color:windowtext'>OpenSSL</span></h1>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+LICENSE ISSUES</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+==============</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+The OpenSSL toolkit stays under a double license, i.e. both the conditions of</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+the OpenSSL License and the original SSLeay license apply to the toolkit.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+See below for the actual license texts.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+OpenSSL License</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+---------------</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>/*
+=======================================================</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+Copyright (c) 1998-2019 The OpenSSL Project.&nbsp; All rights reserved.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+Redistribution and use in source and binary forms, with or without</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+modification, are permitted provided that the following conditions</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+are met:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+1. Redistributions of source code must retain the above copyright</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+notice, this list of conditions and the following disclaimer.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+2. Redistributions in binary form must reproduce the above copyright</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+notice, this list of conditions and the following disclaimer in</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+the documentation and/or other materials provided with the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+distribution.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+3. All advertising materials mentioning features or use of this</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+software must display the following acknowledgment:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+&quot;This product includes software developed by the OpenSSL Project</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+for use in the OpenSSL Toolkit. (http://www.openssl.org/)&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+4. The names &quot;OpenSSL Toolkit&quot; and &quot;OpenSSL Project&quot; must
+not be used to</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+endorse or promote products derived from this software without</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+prior written permission. For written permission, please contact</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+openssl-core@openssl.org.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+5. Products derived from this software may not be called &quot;OpenSSL&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+nor may &quot;OpenSSL&quot; appear in their names without prior written</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+permission of the OpenSSL Project.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+6. Redistributions of any form whatsoever must retain the following</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+acknowledgment:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;
+&nbsp;&nbsp;&quot;This product includes software developed by the OpenSSL
+Project</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+for use in the OpenSSL Toolkit (http://www.openssl.org/)&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+PURPOSE ARE DISCLAIMED.&nbsp; IN NO EVENT SHALL THE OpenSSL PROJECT OR</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+OF THE POSSIBILITY OF SUCH DAMAGE.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+=========================================================</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+This product includes cryptographic software written by Eric Young</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+(eay@cryptsoft.com).&nbsp; This product includes software written by Tim</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+Hudson (tjh@cryptsoft.com).</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*/</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;Original
+SSLeay License</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;-----------------------</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>/*
+Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+All rights reserved.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+This package is an SSL implementation written</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+by Eric Young (eay@cryptsoft.com).</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+The implementation was written so as to conform with Netscapes SSL.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+This library is free for commercial and non-commercial use as long as</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+the following conditions are aheared to.&nbsp; The following conditions</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+apply to all code found in this distribution, be it the RC4, RSA,</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+lhash, DES, etc., code; not just the SSL code.&nbsp; The SSL documentation</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+included with this distribution is covered by the same copyright terms</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+except that the holder is Tim Hudson (tjh@cryptsoft.com).</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+Copyright remains Eric Young's, and as such any Copyright notices in</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+the code are not to be removed.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+If this package is used in a product, Eric Young should be given attribution</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+as the author of the parts of the library used.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+This can be in the form of a textual message at program startup or</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+in documentation (online or textual) provided with the package.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+Redistribution and use in source and binary forms, with or without</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+modification, are permitted provided that the following conditions</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+are met:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+1. Redistributions of source code must retain the copyright</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+notice, this list of conditions and the following disclaimer.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+2. Redistributions in binary form must reproduce the above copyright</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+notice, this list of conditions and the following disclaimer in the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+documentation and/or other materials provided with the distribution.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+3. All advertising materials mentioning features or use of this software</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+must display the following acknowledgement:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+&quot;This product includes cryptographic software written by</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;
+Eric Young (eay@cryptsoft.com)&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+The word 'cryptographic' can be left out if the rouines from the library</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+being used are not cryptographic related :-).</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+4. If you include any Windows specific code (or a derivative thereof) from</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+the apps directory (application code) you must include an acknowledgement:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*&nbsp;&nbsp;&nbsp;
+&quot;This product includes software written by Tim Hudson
+(tjh@cryptsoft.com)&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+ARE DISCLAIMED.&nbsp; IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+SUCH DAMAGE.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+The licence and distribution terms for any publically available version or</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+derivative of this code cannot be changed.&nbsp; i.e. this code cannot simply
+be</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+copied and put under another distribution licence</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*
+[including the GNU Public Licence.]</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;*/</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;line-height:106%;
+font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;line-height:106%;
+font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<h1 style='margin-left:45.6pt;text-indent:-24.0pt'><a name="_heading=h.3znysh7"></a><a
+name="_Qt"></a><span lang=EN-US style='font-family:Wingdings;color:windowtext'>l</span><span
+lang=EN-US style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif;
+color:windowtext'>&nbsp; </span><span lang=EN-US style='font-family:"Times New Roman",serif;
+color:windowtext'>Qt</span></h1>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>GNU
+Lesser General Public License (LGPL)</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Qt
+is available under the GNU Lesser General Public License version 3.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>The
+Qt Toolkit is Copyright (C) 2018 The Qt Company Ltd. and other contributors.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Contact:
+https://www.qt.io/licensing/</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Reference:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>GNU
+Lesser General Public License, version 3</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>LGPL
+version 3</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+GNU LESSER GENERAL PUBLIC LICENSE</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Version 3, 29 June 2007</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;Copyright
+(C) 2007 Free Software Foundation, Inc. &lt;http://fsf.org/&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;Everyone
+is permitted to copy and distribute verbatim copies</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;of
+this license document, but changing it is not allowed.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+This version of the GNU Lesser General Public License incorporates</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>the
+terms and conditions of version 3 of the GNU General Public</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>License,
+supplemented by the additional permissions listed below.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+0. Additional Definitions.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+As used herein, &quot;this License&quot; refers to version 3 of the GNU Lesser</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>General
+Public License, and the &quot;GNU GPL&quot; refers to version 3 of the GNU</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>General
+Public License.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+&quot;The Library&quot; refers to a covered work governed by this License,</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>other
+than an Application or a Combined Work as defined below.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+An &quot;Application&quot; is any work that makes use of an interface provided</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>by
+the Library, but which is not otherwise based on the Library.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Defining
+a subclass of a class defined by the Library is deemed a mode</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>of
+using an interface provided by the Library.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+A &quot;Combined Work&quot; is a work produced by combining or linking an</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Application
+with the Library.&nbsp; The particular version of the Library</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>with
+which the Combined Work was made is also called the &quot;Linked</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Version&quot;.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+The &quot;Minimal Corresponding Source&quot; for a Combined Work means the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Corresponding
+Source for the Combined Work, excluding any source code</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>for
+portions of the Combined Work that, considered in isolation, are</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>based
+on the Application, and not on the Linked Version.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+The &quot;Corresponding Application Code&quot; for a Combined Work means the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>object
+code and/or source code for the Application, including any data</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>and
+utility programs needed for reproducing the Combined Work from the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Application,
+but excluding the System Libraries of the Combined Work.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+1. Exception to Section 3 of the GNU GPL.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+You may convey a covered work under sections 3 and 4 of this License</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>without
+being bound by section 3 of the GNU GPL.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+2. Conveying Modified Versions.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+If you modify a copy of the Library, and, in your modifications, a</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>facility
+refers to a function or data to be supplied by an Application</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>that
+uses the facility (other than as an argument passed when the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>facility
+is invoked), then you may convey a copy of the modified</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>version:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+a) under this License, provided that you make a good faith effort to</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+ensure that, in the event an Application does not supply the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+function or data, the facility still operates, and performs</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+whatever part of its purpose remains meaningful, or</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+b) under the GNU GPL, with none of the additional permissions of</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+this License applicable to that copy.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+3. Object Code Incorporating Material from Library Header Files.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+The object code form of an Application may incorporate material from</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>a
+header file that is part of the Library.&nbsp; You may convey such object</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>code
+under terms of your choice, provided that, if the incorporated</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>material
+is not limited to numerical parameters, data structure</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>layouts
+and accessors, or small macros, inline functions and templates</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>(ten
+or fewer lines in length), you do both of the following:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+a) Give prominent notice with each copy of the object code that the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+Library is used in it and that the Library and its use are</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+covered by this License.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+b) Accompany the object code with a copy of the GNU GPL and this license</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+document.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+4. Combined Works.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+You may convey a Combined Work under terms of your choice that,</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>taken
+together, effectively do not restrict modification of the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>portions
+of the Library contained in the Combined Work and reverse</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>engineering
+for debugging such modifications, if you also do each of</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>the
+following:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+a) Give prominent notice with each copy of the Combined Work that</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+the Library is used in it and that the Library and its use are</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+covered by this License.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+b) Accompany the Combined Work with a copy of the GNU GPL and this license</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+document.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+c) For a Combined Work that displays copyright notices during</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+execution, include the copyright notice for the Library among</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+these notices, as well as a reference directing the user to the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+copies of the GNU GPL and this license document.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+d) Do one of the following:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0) Convey the Minimal Corresponding Source under the terms of this</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+License, and the Corresponding Application Code in a form</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+suitable for, and under terms that permit, the user to</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+recombine or relink the Application with a modified version of</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+the Linked Version to produce a modified Combined Work, in the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+manner specified by section 6 of the GNU GPL for conveying</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Corresponding Source.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1) Use a suitable shared library mechanism for linking with the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;Library.&nbsp; A suitable mechanism is one that (a) uses at
+run time</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+a copy of the Library already present on the user's computer</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+system, and (b) will operate properly with a modified version</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+of the Library that is interface-compatible with the Linked</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Version.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+e) Provide Installation Information, but only if you would otherwise</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+be required to provide such information under section 6 of the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+GNU GPL, and only to the extent that such information is</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+necessary to install and execute a modified version of the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+Combined Work produced by recombining or relinking the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+Application with a modified version of the Linked Version. (If</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+you use option 4d0, the Installation Information must accompany</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+the Minimal Corresponding Source and Corresponding Application</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+Code. If you use option 4d1, you must provide the Installation</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+Information in the manner specified by section 6 of the GNU GPL</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+for conveying Corresponding Source.)</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+5. Combined Libraries.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+You may place library facilities that are a work based on the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Library
+side by side in a single library together with other library</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>facilities
+that are not Applications and are not covered by this</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>License,
+and convey such a combined library under terms of your</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>choice,
+if you do both of the following:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+a) Accompany the combined library with a copy of the same work based</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+on the Library, uncombined with any other library facilities,</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+conveyed under the terms of this License.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+b) Give prominent notice with the combined library that part of it</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+is a work based on the Library, and explaining where to find the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;
+accompanying uncombined form of the same work.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+6. Revised Versions of the GNU Lesser General Public License.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+The Free Software Foundation may publish revised and/or new versions</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>of
+the GNU Lesser General Public License from time to time. Such new</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>versions
+will be similar in spirit to the present version, but may</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>differ
+in detail to address new problems or concerns.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+Each version is given a distinguishing version number. If the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Library
+as you received it specifies that a certain numbered version</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>of
+the GNU Lesser General Public License &quot;or any later version&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>applies
+to it, you have the option of following the terms and</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>conditions
+either of that published version or of any later version</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>published
+by the Free Software Foundation. If the Library as you</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>received
+it does not specify a version number of the GNU Lesser</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>General
+Public License, you may choose any version of the GNU Lesser</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>General
+Public License ever published by the Free Software Foundation.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;
+If the Library as you received it specifies that a proxy can decide</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>whether
+future versions of the GNU Lesser General Public License shall</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>apply,
+that proxy's public statement of acceptance of any version is</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>permanent
+authorization for you to choose that version for the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Library.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<h1 style='margin-left:45.6pt;text-indent:-24.0pt'><a
+name="_heading=h.kl9kvanq4rqo"></a><a name="_SQLite"></a><span lang=EN-US
+style='font-family:Wingdings;color:windowtext'>l</span><span lang=EN-US
+style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif;
+color:windowtext'>&nbsp; </span><span lang=EN-US style='font-family:"Times New Roman",serif;
+color:windowtext'>SQLite</span></h1>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>SQLite
+Is Public Domain</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>SQLite
+is in the</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Public
+Domain</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>All
+of the code and documentation in SQLite has been dedicated to the public domain
+by </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>the
+authors. All code authors, and representatives of the companies they work for,
+have </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>signed
+affidavits dedicating their contributions to the public domain and originals of
+those </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>signed
+affidavits are stored in a firesafe at the main offices of Hwaci. Anyone is
+free to copy, </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>modify,
+publish, use, compile, sell, or distribute the original SQLite code, either in
+source </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>code
+form or as a compiled binary, for any purpose, commercial or non-commercial,
+and by </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>any
+means.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>The
+previous paragraph applies to the deliverable code and documentation in SQLite –
+</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>those
+parts of the SQLite library that you actually bundle and ship with a larger
+application. </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Some
+scripts used as part of the build process (for example the
+&quot;configure&quot; scripts </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>generated
+by autoconf) might fall under other open-source licenses. Nothing from these </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>build
+scripts ever reaches the final deliverable SQLite library, however, and so the
+licenses </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>associated
+with those scripts should not be a factor in assessing your rights to copy and
+use </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>the
+SQLite library.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>All
+of the deliverable code in SQLite has been written from scratch. No code has
+been taken </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>from
+other projects or from the open internet. Every line of code can be traced back
+to its </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>original
+author, and all of those authors have public domain dedications on file. So the
+</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>SQLite
+code base is clean and is uncontaminated with licensed code from other
+projects.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Open-Source,
+not Open-Contribution</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>SQLite
+is open-source, meaning that you can make as many copies of it as you want and
+do </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>whatever
+you want with those copies, without limitation. But SQLite is not open-</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>contribution.
+In order to keep SQLite in the public domain and ensure that the code does </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>not
+become contaminated with proprietary or licensed content, the project does not
+accept </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>patches
+from unknown persons.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>All
+of the code in SQLite is original, having been written specifically for use by
+SQLite. No </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>code
+has been copied from unknown sources on the internet.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Warranty
+of Title</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>SQLite
+is in the public domain and does not require a license. Even so, some
+organizations </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>want
+legal proof of their right to use SQLite. Circumstances where this occurs
+include the </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>following:</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Your
+company desires indemnity against claims of copyright infringement.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>You
+are using SQLite in a jurisdiction that does not recognize the public domain.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>You
+are using SQLite in a jurisdiction that does not recognize the right of an
+author to </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>dedicate
+their work to the public domain.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>You
+want to hold a tangible legal document as evidence that you have the legal
+right to use </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>and
+distribute SQLite.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Your
+legal department tells you that you have to purchase a license.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>If
+any of the above circumstances apply to you, Hwaci, the company that employs
+all the </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>developers
+of SQLite, will sell you a Warranty of Title for SQLite. A Warranty of Title is
+a </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>legal
+document that asserts that the claimed authors of SQLite are the true authors,
+and </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>that
+the authors have the legal right to dedicate the SQLite to the public domain,
+and that </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Hwaci
+will vigorously defend against challenges to those claims. All proceeds from
+the sale </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>of
+SQLite Warranties of Title are used to fund continuing improvement and support
+of </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>SQLite.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Contributed
+Code</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>In
+order to keep SQLite completely free and unencumbered by copyright, the project
+does </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>not
+accept patches. If you would like to make a suggested change, and include a
+patch as a </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>proof-of-concept,
+that would be great. However please do not be offended if we rewrite </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>your
+patch from scratch.&nbsp;&nbsp;&nbsp; </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;line-height:106%;
+font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+
+<h1 style='margin-left:45.6pt;text-indent:-24.0pt'><a name="_heading=h.4i7ojhp"></a><a
+name="_quazip"></a><span lang=EN-US style='font-family:Wingdings;color:windowtext'>l</span><span
+lang=EN-US style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif;
+color:windowtext'>&nbsp; </span><span lang=EN-US style='font-family:"Times New Roman",serif;
+color:windowtext'>quazip</span><span lang=EN-US><a
+href="https://github.com/stachenov/quazip"><span style='font-family:"Times New Roman",serif;
+color:windowtext'> </span></a></span></h1>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Copyright
+(C) 2005-2020 Sergey A. Tachenov and contributors</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Distributed
+under LGPL, full details in the COPYING file.</span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Original
+ZIP package is copyrighted by Gilles Vollant, see quazip/(un)zip.h files for
+details, </span></p>
+
+<p class=MsoNormal style='margin-left:22.5pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>but
+basically it's the zlib license.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"Segoe UI",sans-serif'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+
+<h1 style='margin-left:45.6pt;text-indent:-24.0pt'><a name="_l__Cyptopp"></a><span
+lang=EN-US style='font-family:Wingdings;color:windowtext'>l</span><span
+lang=EN-US style='font-size:7.0pt;line-height:106%;font-family:"Times New Roman",serif;
+color:windowtext'>&nbsp; </span><span lang=EN-US style='font-family:"Times New Roman",serif;
+color:windowtext'>Cyptopp</span></h1>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Compilation
+Copyright (c) 1995-2010 by Wei Dai.&nbsp; All rights reserved.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>This
+copyright applies only to this software distribution package </span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>as
+a compilation, and does not imply a copyright on any particular </span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>file
+in the package.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>All
+individual files in this compilation are placed in the public domain by</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Wei
+Dai and other contributors.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>I
+would like to thank the following authors for placing their works into</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>the
+public domain:</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Joan
+Daemen - 3way.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Leonard
+Janke - cast.cpp, seal.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Steve
+Reid - cast.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Phil
+Karn - des.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Andrew
+M. Kuchling - md2.cpp, md4.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Colin
+Plumb - md5.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Seal
+Woods - rc6.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Chris
+Morgan - rijndael.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Paulo
+Baretto - rijndael.cpp, skipjack.cpp, square.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Richard
+De Moliner - safer.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Matthew
+Skala - twofish.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Kevin
+Springle - camellia.cpp, shacal2.cpp, ttmac.cpp, whrlpool.cpp, ripemd.cpp</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>Permission
+to use, copy, modify, and distribute this compilation for</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>any
+purpose, including commercial applications, is hereby granted</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>without
+fee, subject to the following restrictions:</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>1.
+Any copy or modification of this compilation in any form, except</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>in
+object code form as part of an application software, must include</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>the
+above copyright notice and this license.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>2.
+Users of this software agree that any modification or extension</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>they
+provide to Wei Dai will be considered public domain and not</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>copyrighted
+unless it includes an explicit copyright notice.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>3.
+Wei Dai makes no warranty or representation that the operation of the</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>software
+in this compilation will be error-free, and Wei Dai is under no</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>obligation
+to provide any services, by way of maintenance, update, or</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>otherwise.&nbsp;
+THE SOFTWARE AND ANY DOCUMENTATION ARE PROVIDED &quot;AS IS&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>WITHOUT
+EXPRESS OR IMPLIED WARRANTY INCLUDING, BUT NOT LIMITED TO,</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>PURPOSE.
+IN NO EVENT WILL WEI DAI OR ANY OTHER CONTRIBUTOR BE LIABLE FOR</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>DIRECT,
+INCIDENTAL OR CONSEQUENTIAL DAMAGES, EVEN IF</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGES.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>4.
+Users will not use Wei Dai or any other contributor's name in any </span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>publicity
+or advertising, without prior written consent in each case.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>5.
+Export of this software from the United States may require a</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>specific
+license from the United States Government.&nbsp; It is the</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>responsibility
+of any person or organization contemplating export</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>to
+obtain such a license before exporting.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>6.
+Certain parts of this software may be protected by patents.&nbsp; It</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>is
+the users' responsibility to obtain the appropriate</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>licenses
+before using those parts.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>If
+this compilation is used in object code form in an application</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>software,
+acknowledgement of the author is not required but would be</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>appreciated.
+The contribution of any useful modifications or extensions</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>to
+Wei Dai is not required but would also be appreciated.</span></p>
+
+<p class=MsoNormal style='margin-left:22.0pt'><span lang=EN-US
+style='font-size:14.0pt;line-height:106%;font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:14.0pt;line-height:106%;
+font-family:"Segoe UI",sans-serif'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

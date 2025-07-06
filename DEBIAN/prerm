@@ -1,0 +1,3 @@
+#!/bin/bash
+
+killall QfinderPro &>/dev/null || true

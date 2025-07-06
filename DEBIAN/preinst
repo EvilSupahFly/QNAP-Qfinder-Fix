@@ -1,0 +1,395 @@
+#!/bin/bash
+
+# Don't need change version manually, it will be modified by build.sh
+VERSION=7.12.3.0527
+APP_NAME_VERSION="Qfinder Pro "${VERSION}
+MIN_VER_STR="18.04"
+MAX_VER_STR=""
+
+function CompareNum(){
+  arg1=$1
+  arg2=$2
+  if [ -z "$arg1" ];
+  then
+      if [ -z "$arg2" ];
+      then
+        compareResult=0
+      else
+        compareResult=-1
+      fi
+  else
+    if [ -z "$arg2" ];
+    then
+        compareResult=1
+    else
+        if [ "$arg1" -gt "$arg2" ];
+        then
+            compareResult=1
+        elif [ "$arg1" -eq "$arg2" ];
+        then
+            compareResult=0
+        else
+            compareResult=-1
+        fi
+    fi
+  fi
+}
+
+showSystemRequirementDialog(){
+LOCALE_LANG=$(locale | grep LANG=) #ex: LANG=zh_TW.UTF-8
+LANG_STR=$(echo $LOCALE_LANG | cut -c6-10)
+
+SYS_REQUIREMENT_TITLE="Qfinder Pro"
+SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" cannot be installed. Your operating system version is not supported."
+SYS_REQUIREMENT_MIN_MSG="Minimum system requirements: "${MIN_VER_STR}
+SYS_REQUIREMENT_MAX_MSG="Maximum system requirements: "${MAX_VER_STR}
+SYS_REQUIREMENT_BUTTON="Close"
+if [[ "${LANG_STR,,}" == "zh_tw" ]]; then
+	SYS_REQUIREMENT_MSG="無法安裝 "${APP_NAME_VERSION}"，因為您的作業系統版本不支援。"
+	SYS_REQUIREMENT_MIN_MSG="最低系統需求："${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="最高系統需求："${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="關閉"
+elif [[ "${LANG_STR,,}" == "zh_cn" ]]; then
+	SYS_REQUIREMENT_MSG="无法安装 "${APP_NAME_VERSION}"。操作系统版本不受支持。"
+	SYS_REQUIREMENT_MIN_MSG="最低系统要求: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="最高系统要求: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="关闭"
+elif [[ "${LANG_STR,,}" == "cs_cz" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" nelze nainstalovat. Verze vašeho operačního systému není podporována."
+	SYS_REQUIREMENT_MIN_MSG="Minimální systémové požadavky: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Maximální systémové požadavky: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Zavřít"
+elif [[ "${LANG_STR,,}" == "da_dk" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" kan ikke installeres. Versionen af dit operativsystem er ikke understøttet."
+	SYS_REQUIREMENT_MIN_MSG="Min. systemkrav: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Maks. systemkrav: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Luk"
+elif [[ "${LANG_STR,,}" == "nl_nl" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" kan niet worden geïnstalleerd. De versie van uw besturingssysteem wordt niet ondersteund."
+	SYS_REQUIREMENT_MIN_MSG="Minimale systeemvereisten: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Maximum systeemvereisten: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Afsluiten"
+elif [[ "${LANG_STR,,}" == "fi_fi" ]]; then
+	SYS_REQUIREMENT_MSG="Sovellusta "${APP_NAME_VERSION}" ei voi asentaa. Käyttöjärjestelmäversiotasi ei tueta."
+	SYS_REQUIREMENT_MIN_MSG="Järjestelmän vähimmäisvaatimukset: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Järjestelmän enimmäisvaatimukset: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Sulje"
+elif [[ "${LANG_STR,,}" == "fr_fr" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" ne peut être installé. La version de votre système d'exploitation n'est pas prise en charge."
+	SYS_REQUIREMENT_MIN_MSG="Configuration minimale requise : "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Configuration maximale requise : "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Fermer"
+elif [[ "${LANG_STR,,}" == "de_de" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" kann nicht installiert werden. Die Version Ihres Betriebssystems wird nicht unterstützt."
+	SYS_REQUIREMENT_MIN_MSG="Mindestsystemanforderungen: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Maximale Systemanforderungen: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Schließen"
+elif [[ "${LANG_STR,,}" == "el_gr" ]]; then
+	SYS_REQUIREMENT_MSG="Δεν είναι δυνατή η εγκατάσταση του "${APP_NAME_VERSION}". Η έκδοση του λειτουργικού σας συστήματος δεν υποστηρίζεται."
+	SYS_REQUIREMENT_MIN_MSG="Ελάχιστες απαιτήσεις συστήματος: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Μέγιστες απαιτήσεις συστήματος: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Κλείσιμο"
+elif [[ "${LANG_STR,,}" == "hu_hu" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" nem telepíthető. Ez az operációsrendszer-verzió nem támogatott."
+	SYS_REQUIREMENT_MIN_MSG="Minimális rendszerkövetelmények: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Maximális rendszerkövetelmények: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Bezárás"
+elif [[ "${LANG_STR,,}" == "it_it" ]]; then
+	SYS_REQUIREMENT_MSG="Impossibile installare "${APP_NAME_VERSION}". La versione del sistema operativo non è supportata."
+	SYS_REQUIREMENT_MIN_MSG="Requisiti di sistema minimi: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Requisiti di sistema massimi: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Chiudi"
+elif [[ "${LANG_STR,,}" == "ja_jp" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}"をインストールできません。お使いのオペレーティングシステムバージョンはサポートされていません。"
+	SYS_REQUIREMENT_MIN_MSG="最小システム要件: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="最大システム要件: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="閉じる"
+elif [[ "${LANG_STR,,}" == "ko_kr" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}"을(를) 설치할 수 없습니다. 지원하지 않는 운영 체제 버전입니다."
+	SYS_REQUIREMENT_MIN_MSG="최소 시스템 요구 사항: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="최대 시스템 요구 사항: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="닫기"
+elif [[ "${LANG_STR,,}" == "nb_no" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" kan ikke installeres. Operativsystemversjonen din støttes ikke."
+	SYS_REQUIREMENT_MIN_MSG="Minimum systemkrav: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Maksimum systemkrav: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Lukk"
+elif [[ "${LANG_STR,,}" == "pl_pl" ]]; then
+	SYS_REQUIREMENT_MSG="Nie można zainstalować aplikacji "${APP_NAME_VERSION}". Używana wersja systemu operacyjnego nie jest obsługiwana."
+	SYS_REQUIREMENT_MIN_MSG="Minimalne wymagania systemowe: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Maksymalne wymagania systemowe: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Zamknij"
+elif [[ "${LANG_STR,,}" == "pt_br" ]]; then
+	SYS_REQUIREMENT_MSG="Não é possível instalar a "${APP_NAME_VERSION}". A versão do seu sistema operativo não é suportada."
+	SYS_REQUIREMENT_MIN_MSG="Requisitos mínimos do sistema: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Requisitos máximos do sistema: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Fechar"
+elif [[ "${LANG_STR,,}" == "ro_ro" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" nu poate fi instalat. Versiunea sistemului dvs. de operare nu este acceptată."
+	SYS_REQUIREMENT_MIN_MSG="Cerințe minime de sistem: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Cerințe maxime de sistem: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Închidere"
+elif [[ "${LANG_STR,,}" == "ru_ru" ]]; then
+	SYS_REQUIREMENT_MSG="Нельзя установить "${APP_NAME_VERSION}". Ваша версия операционной системы не поддерживается."
+	SYS_REQUIREMENT_MIN_MSG="Минимальные системные требования: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Максимальные системные требования: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Закрыть"
+elif [[ "${LANG_STR,,}" == "es_es" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" no se puede instalar. La versión de su sistema operativo no es compatible."
+	SYS_REQUIREMENT_MIN_MSG="Requisitos mínimos del sistema: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Requisitos máximos del sistema: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Cerrar"
+elif [[ "${LANG_STR,,}" == "sv_se" ]]; then
+	SYS_REQUIREMENT_MSG="Det går inte att installera "${APP_NAME_VERSION}". Operativsystemets version stöds inte."
+	SYS_REQUIREMENT_MIN_MSG="Minsta systemkrav: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Högsta systemkrav: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Stäng"
+elif [[ "${LANG_STR,,}" == "th_th" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}"ไม่สามารถติดตั้งได้ เวอร์ชันระบบปฏิบัติการของคุณไม่ได้รับการสนับสนุน"
+	SYS_REQUIREMENT_MIN_MSG="ความต้องการขั้นต่ำของระบบ: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="ความต้องการขั้นสูงของระบบ: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="ปิด"
+elif [[ "${LANG_STR,,}" == "tr_tr" ]]; then
+	SYS_REQUIREMENT_MSG=${APP_NAME_VERSION}" kurulamaz. İşletim sistemi sürümünüz desteklenmiyor."
+	SYS_REQUIREMENT_MIN_MSG="Minimum sistem gereklilikleri: "${MIN_VER_STR}
+	SYS_REQUIREMENT_MAX_MSG="Azami sistem gereksinimleri: "${MAX_VER_STR}
+	SYS_REQUIREMENT_BUTTON="Kapat"
+fi
+
+if [ ! -z ${MIN_VER_STR} ]; then
+	SYS_REQUIREMENT_ALL_MSG=${SYS_REQUIREMENT_MSG}"\n"${SYS_REQUIREMENT_MIN_MSG}
+else
+	SYS_REQUIREMENT_ALL_MSG=${SYS_REQUIREMENT_MSG}
+fi
+
+if [ ! -z ${MAX_VER_STR} ]; then
+	SYS_REQUIREMENT_ALL_MSG=${SYS_REQUIREMENT_ALL_MSG}"\n"${SYS_REQUIREMENT_MAX_MSG}
+else
+	SYS_REQUIREMENT_ALL_MSG=${SYS_REQUIREMENT_ALL_MSG}
+fi
+
+echo ${SYS_REQUIREMENT_ALL_MSG}
+zenity \
+--warning \
+--text="${SYS_REQUIREMENT_ALL_MSG}" \
+--title="${SYS_REQUIREMENT_TITLE}" \
+--width=400 \
+--ok-label="${SYS_REQUIREMENT_BUTTON}"
+}
+
+# Check downgrade case
+showDowngradeDialog(){
+LOCALE_LANG=$(locale | grep LANG=) #ex: LANG=zh_TW.UTF-8
+LANG_STR=$(echo $LOCALE_LANG | cut -c6-10)
+
+DOWNGRADE_TITLE="Qfinder Pro"
+DOWNGRADE_MSG="You cannot install an older version of Qfinder Pro because you have a newer version of Qfinder Pro installed. Uninstall the newer version and then install the older version again."
+DOWNGRAD_BUTTON="Close"
+if [[ "${LANG_STR,,}" == "zh_tw" ]]; then
+	DOWNGRADE_MSG="由於已安裝了較新版的 Qfinder Pro，因此不得再安裝較舊版的 Qfinder Pro。請先解除安裝較新版的軟體，再重新安裝較舊版的軟體。"
+	DOWNGRAD_BUTTON="關閉"
+elif [[ "${LANG_STR,,}" == "zh_cn" ]]; then
+	DOWNGRADE_MSG="不得安装任何旧版 Qfinder Pro，因为您已安装新版 Qfinder Pro。请卸载新版，然后再次安装旧版。"
+	DOWNGRAD_BUTTON="关闭"
+elif [[ "${LANG_STR,,}" == "cs_cz" ]]; then
+	DOWNGRADE_MSG="Nemůžete nainstalovat starší verzi Qfinder Pro, protože máte nainstalovanou novější verzi Qfinder Pro. Odinstalujte novější verzi a znovu nainstalujte starší verzi."
+	DOWNGRAD_BUTTON="Zavřít"
+elif [[ "${LANG_STR,,}" == "da_dk" ]]; then
+	DOWNGRADE_MSG="Du kan ikke installere en ældre version af Qfinder Pro da du har en nyere version af Qfinder Pro installeret. Afinstaller den nyere version og installer den ældre version igen."
+	DOWNGRAD_BUTTON="Luk"
+elif [[ "${LANG_STR,,}" == "nl_nl" ]]; then
+	DOWNGRADE_MSG="U kunt geen oudere versie van Qfinder Pro installeren, omdat u een nieuwere versie van Qfinder Pro heeft geïnstalleerd. Verwijder eerst de nieuwere versie en installeer dan de oudere versie opnieuw."
+	DOWNGRAD_BUTTON="Afsluiten"
+elif [[ "${LANG_STR,,}" == "fi_fi" ]]; then
+	DOWNGRADE_MSG="Et voi asentaa vanhempaa versiota kohteesta Qfinder Pro, sillä sinulla on asennettuna uudempi versio kohteesta Qfinder Pro. Poista uudemman version asennnus ja asenna vanhempi version uudelleen."
+	DOWNGRAD_BUTTON="Sulje"
+elif [[ "${LANG_STR,,}" == "fr_fr" ]]; then
+	DOWNGRADE_MSG="Vous ne pouvez pas installer une version antérieure de Qfinder Pro car vous avez une version plus récente installée de Qfinder Pro. Désinstallez la nouvelle version puis réinstallez la version antérieure."
+	DOWNGRAD_BUTTON="Fermer"
+elif [[ "${LANG_STR,,}" == "de_de" ]]; then
+	DOWNGRADE_MSG="Sie können keine ältere Version von Qfinder Pro installieren, da Sie eine neuere Version von Qfinder Pro installiert haben. Deinstallieren Sie die neuere Version und installieren Sie dann die ältere Version erneut."
+	DOWNGRAD_BUTTON="Schließen"
+elif [[ "${LANG_STR,,}" == "el_gr" ]]; then
+	DOWNGRADE_MSG="Δεν μπορείτε να εγκαταστήσετε μια παλαιότερη έκδοση του Qfinder Pro επειδή έχετε εγκατεστημένη μια νεότερη έκδοση του Qfinder Pro. Καταργήστε την εγκατάσταση της νεότερης έκδοσης και στη συνέχεια να εγκαταστήσετε ξανά την παλαιότερη έκδοση. "
+	DOWNGRAD_BUTTON="Κλείσιμο"
+elif [[ "${LANG_STR,,}" == "hu_hu" ]]; then
+	DOWNGRADE_MSG="Nem telepíthető a(z) Qfinder Pro korábbi verziója, mert telepítve van a(z) Qfinder Pro egy újabb verziója. Távolítsa el az újabb verziót, majd telepítse a régebbit."
+	DOWNGRAD_BUTTON="Bezárás"
+elif [[ "${LANG_STR,,}" == "it_it" ]]; then
+	DOWNGRADE_MSG="Impossibile installare una versione precedente di Qfinder Pro perché è installata una versione più recente di Qfinder Pro. Disinstallare la versione più recente, quindi installare nuovamente la versione meno recente."
+	DOWNGRAD_BUTTON="Chiudi"
+elif [[ "${LANG_STR,,}" == "ja_jp" ]]; then
+	DOWNGRADE_MSG="古いバージョンの Qfinder Pro はインストールできません。これは、より新しいバージョンの Qfinder Pro がインストールされているためです。より新しいバージョンをアンインストールしてから、再び古いバージョンをインストールしてください。"
+	DOWNGRAD_BUTTON="閉じる"
+elif [[ "${LANG_STR,,}" == "ko_kr" ]]; then
+	DOWNGRADE_MSG="더 최신 버전의 Qfinder Pro이(가) 설치되어 있기 때문에 Qfinder Pro의 이전 버전을 설치할 수 없습니다. 보다 최신 버전을 제거한 다음 이전 버전을 다시 설치하십시오."
+	DOWNGRAD_BUTTON="닫기"
+elif [[ "${LANG_STR,,}" == "nb_no" ]]; then
+	DOWNGRADE_MSG="Du kan ikke installere en eldre versjon av Qfinder Pro fordi du har installert en nyere versjon av Qfinder Pro. Avinstaller den nyere versjonen, og installer deretter den eldre versjonen på nytt."
+	DOWNGRAD_BUTTON="Lukk"
+elif [[ "${LANG_STR,,}" == "pl_pl" ]]; then
+	DOWNGRADE_MSG="Nie możesz zainstalować starszej wersji aplikacji Qfinder Pro, ponieważ masz zainstalowaną nowszą wersję Qfinder Pro. Odinstaluj nowszą wersję, a następnie zainstaluj ponownie starszą wersję aplikacji."
+	DOWNGRAD_BUTTON="Zamknij"
+elif [[ "${LANG_STR,,}" == "pt_br" ]]; then
+	DOWNGRADE_MSG="Você não pode instalar uma versão antiga do Qfinder Pro porque tem uma versão mais recente de Qfinder Pro instalada. Desinstale a versão mais recente e depois instale a versão antiga novamente."
+	DOWNGRAD_BUTTON="Fechar"
+elif [[ "${LANG_STR,,}" == "ro_ro" ]]; then
+	DOWNGRADE_MSG="Nu puteți instala o versiune mai veche a Qfinder Pro deoarece aveți deja instalată o versiune mai nouă a Qfinder Pro. Dezinstalați versiunea mai nouă și apoi instalați din nou versiunea mai veche. "
+	DOWNGRAD_BUTTON="Închidere"
+elif [[ "${LANG_STR,,}" == "ru_ru" ]]; then
+	DOWNGRADE_MSG="Вы не можете установить более старую версию Qfinder Pro, так как у вас установлена более новая версия Qfinder Pro. Удалите более новую версию и затем снова установите более старую версию."
+	DOWNGRAD_BUTTON="Закрыть"
+elif [[ "${LANG_STR,,}" == "es_es" ]]; then
+	DOWNGRADE_MSG="No se puede instalar una versión anterior de Qfinder Pro, ya que tiene instalada una versión más nueva de Qfinder Pro. Desinstale la nueva versión y luego vuelva a instalar la versión más antigua."
+	DOWNGRAD_BUTTON="Cerrar"
+elif [[ "${LANG_STR,,}" == "sv_se" ]]; then
+	DOWNGRADE_MSG="Det går inte att installera en äldre version av Qfinder Pro eftersom du har en nyare version av Qfinder Pro installerad. Avinstallera den nyare versionen och installera sedan den äldre versionen på nytt."
+	DOWNGRAD_BUTTON="Stäng"
+elif [[ "${LANG_STR,,}" == "th_th" ]]; then
+	DOWNGRADE_MSG="คุณไม่สามารถติดตั้งเวอร์ชันที่เก่ากว่าของ Qfinder Pro เนื่องจากคุณมีเวอร์ชันใหม่กว่าของ Qfinder Pro ติดตั้งอยู่ ยกเลิกการติดตั้งเวอร์ชันใหม่กว่าและติดตั้งเวอร์ชันเก่าอีกครั้ง"
+	DOWNGRAD_BUTTON="ปิด"
+elif [[ "${LANG_STR,,}" == "tr_tr" ]]; then
+	DOWNGRADE_MSG="Qfinder Pro uygulamasının daha yeni bir sürümüne sahip olduğunuz için Qfinder Pro uygulamasının eski bir sürümünü yükleyemezsiniz. Daha yeni sürümü kaldırın ve ardından eski sürümü tekrar yükleyin."
+	DOWNGRAD_BUTTON="Kapat"
+fi
+
+echo ${DOWNGRADE_MSG}
+zenity \
+--warning \
+--text="${DOWNGRADE_MSG}" \
+--title="${DOWNGRADE_TITLE}" \
+--width=400 \
+--ok-label="${DOWNGRAD_BUTTON}"
+}
+
+if [ -f "/usr/local/bin/QNAP/QfinderPro/QfinderPro.sh" ]; then
+	INSTALLED_VER_STR="$(dpkg -s qfinderpro | grep -i version)" # ex: Version: 7.4.0.0709
+
+	vars=( $INSTALLED_VER_STR )
+	INSTALLED_QFINDER_VERS=(${vars[1]//./ })
+	INSTALLED_QFINDER_MAJOR="${INSTALLED_QFINDER_VERS[0]}"
+	INSTALLED_QFINDER_MINOR="${INSTALLED_QFINDER_VERS[1]}"
+	INSTALLED_QFINDER_PATCH="${INSTALLED_QFINDER_VERS[2]}"
+
+	NEW_QFINDER_VERS=(${VERSION//./ })
+	NEW_QFINDER_MAJOR="${NEW_QFINDER_VERS[0]}"
+	NEW_QFINDER_MINOR="${NEW_QFINDER_VERS[1]}"
+	NEW_QFINDER_PATCH="${NEW_QFINDER_VERS[2]}"
+
+	if [ -z "$INSTALLED_QFINDER_VERS" ];
+	then
+	    IsNewerInstalled=0;
+	else
+	    CompareNum "$INSTALLED_QFINDER_MAJOR" "$NEW_QFINDER_MAJOR"
+	    if [ "$compareResult" == 1 ];
+	    then
+		IsNewerInstalled=1;
+	    elif [ "$compareResult" == 0 ];
+	    then
+		CompareNum "$INSTALLED_QFINDER_MINOR" "$NEW_QFINDER_MINOR"
+		if [ "$compareResult" == 1 ];
+		then
+		    IsNewerInstalled=1;
+		elif [ "$compareResult" == 0 ];
+		then
+		    CompareNum "$INSTALLED_QFINDER_PATCH" "$NEW_QFINDER_PATCH"
+		    if [ "$compareResult" == 1 ];
+		    then
+		        IsNewerInstalled=1;
+		    else
+		        IsNewerInstalled=0;
+		    fi
+		else
+		    IsNewerInstalled=0;
+		fi
+	    else
+		IsNewerInstalled=0;
+	    fi
+	fi
+
+	if [[ "$IsNewerInstalled" == 1 ]]; then
+		showDowngradeDialog
+		exit 1
+	fi
+fi
+
+LSB_DESCRIPTION=$(lsb_release -d | cut -f2)
+VERSION_REGEX='([0-9]+)\.([0-9]+)(\.([0-9]+))?'
+
+if [[ $LSB_DESCRIPTION =~ $VERSION_REGEX ]]; then
+  CURRENT_VER_MAJOR="${BASH_REMATCH[1]}"
+  CURRENT_VER_MINOR="${BASH_REMATCH[2]}"
+  CURRENT_VER_PATCH="${BASH_REMATCH[4]:-0}"
+else
+  echo "Error: Unable to extract version from LSB description."
+  exit 1
+fi
+
+# Parse minimum version
+IFS='.' read -r MIN_MAJOR MIN_MINOR MIN_PATCH <<< "$MIN_VER_STR"
+MIN_PATCH="${MIN_PATCH:-0}"
+
+# Parse maximum version if defined
+if [ ! -z "$MAX_VER_STR" ]; then
+  IFS='.' read -r MAX_MAJOR MAX_MINOR MAX_PATCH <<< "$MAX_VER_STR"
+  MAX_PATCH="${MAX_PATCH:-0}"
+fi
+
+SystemRequirementResult=1
+
+# Check against MAX version
+if [ ! -z "$MAX_VER_STR" ]; then
+    CompareNum "$CURRENT_VER_MAJOR" "$MAX_MAJOR"
+    if [ "$compareResult" == 1 ]; then
+        SystemRequirementResult=-1
+    elif [ "$compareResult" == 0 ]; then
+        CompareNum "$CURRENT_VER_MINOR" "$MAX_MINOR"
+        if [ "$compareResult" == 1 ]; then
+            SystemRequirementResult=-1
+        elif [ "$compareResult" == 0 ]; then
+            CompareNum "$CURRENT_VER_PATCH" "$MAX_PATCH"
+            if [ "$compareResult" == 1 ]; then
+                SystemRequirementResult=-1
+            fi
+        fi
+    fi
+fi
+
+# Check against MIN version
+if [ "$SystemRequirementResult" -gt 0 ]; then
+    CompareNum "$CURRENT_VER_MAJOR" "$MIN_MAJOR"
+    if [ "$compareResult" == -1 ]; then
+        SystemRequirementResult=-1
+    elif [ "$compareResult" == 0 ]; then
+        CompareNum "$CURRENT_VER_MINOR" "$MIN_MINOR"
+        if [ "$compareResult" == -1 ]; then
+            SystemRequirementResult=-1
+        elif [ "$compareResult" == 0 ]; then
+            CompareNum "$CURRENT_VER_PATCH" "$MIN_PATCH"
+            if [ "$compareResult" == -1 ]; then
+                SystemRequirementResult=-1
+            fi
+        fi
+    fi
+fi
+
+if [ "$SystemRequirementResult" -lt 0 ]; then
+    showSystemRequirementDialog
+    exit -1
+fi
+
+killall "QfinderPro" &>/dev/null || true
+
+#dpkg -l qfinderpro &>/dev/null
+#if [ $? == 0 ]; then
+if [ -f /usr/share/applications/QNAPQfinderPro.desktop ]; then
+	install -o $SUDO_UID -g $SUDO_GID -m 755 -d /usr/local/share/QNAP || true
+	install -o $SUDO_UID -g $SUDO_GID -m 755 -d /usr/local/share/QNAP/tmp || true
+
+	if [ -f ~/.config/QNAP/Qfinder.conf ]; then
+		install -b ~/.config/QNAP/Qfinder.conf /usr/local/share/QNAP/tmp || true
+	fi
+	if [ -f ~/.local/share/QNAP/QfinderPro/wol.json ]; then
+		install -b ~/.local/share/QNAP/QfinderPro/wol.json /usr/local/share/QNAP/tmp || true
+	fi
+fi

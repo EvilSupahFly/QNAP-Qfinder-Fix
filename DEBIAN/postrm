@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Don't need change version manually, it will be modified by build.sh
+VERSION=7.12.3.0527
+
+# Check downgrade case
+if [ -f "/usr/local/bin/QNAP/QfinderPro/QfinderPro.sh" ]; then
+	INSTALLED_VER_STR="$(dpkg -s qfinderpro | grep -i version)" # ex: Version: 7.4.0.0709
+	vars=( $INSTALLED_VER_STR )
+	INSTALLED_VER=${vars[1]}
+	if [[ "$VERSION" < "$INSTALLED_VER" ]]; then
+		exit 0
+	fi
+fi
+
+DESKTOPDIR=$(xdg-user-dir DESKTOP)
+
+if [ -f ~/.config/QNAP/Qfinder.conf ]; then
+	rm ~/.config/QNAP/Qfinder.conf || true
+fi
+
+if [ -d ~/.local/share/QNAP/QfinderPro ]; then
+	rm ~/.local/share/QNAP/QfinderPro -rf || true
+fi
+
+if [ -f ~/.config/autostart/QNAPQfinderPro.desktop ]; then
+	rm ~/.config/autostart/QNAPQfinderPro.desktop || true
+fi
+
+if [ -f $DESKTOPDIR/QNAPQfinderPro.desktop ]; then
+	rm $DESKTOPDIR/QNAPQfinderPro.desktop || true
+fi
