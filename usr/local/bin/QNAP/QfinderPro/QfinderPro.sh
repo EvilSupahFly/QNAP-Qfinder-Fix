@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #!/bin/sh
 appname=`basename $0 | sed s,\.sh$,,`
 

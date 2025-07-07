@@ -9,3 +9,5 @@ To install this fixed version, download the `.deb` archive from the Releases sec
 ```
 [ $ ] sudo dpkg -i QNAPQfinderProUbuntux64-7.12.3.0527-patched.deb
 ```
+
+QNAP requires - at minimum - libc 2.27, QT 5.6 (probably - it's not documented specifically though), and Ubuntu 18.04 (or something derrived from it), so I'm consdiering adding a `glibc` check and bump the OS version check down to be a fail-safe check if `libc` can't be determined.
