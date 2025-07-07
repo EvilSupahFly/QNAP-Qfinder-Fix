@@ -1,9 +1,9 @@
---- /home/seann/Downloads/QNAP/qfinderpkg-orig/DEBIAN/preinst	2025-05-27 02:37:57.000000000 -0400
-+++ /home/seann/Downloads/QNAP/qfinderpkg-fixed/DEBIAN/preinst	2025-07-02 08:06:49.732807569 -0400
+--- /home/seann/src/QNAP/qfinderpkg-orig/DEBIAN/preinst	2025-05-27 02:37:57.000000000 -0400
++++ /home/seann/src/QNAP/qfinderpkg-fixed/DEBIAN/preinst	2025-07-02 08:06:49.732807569 -0400
 @@ -313,86 +313,67 @@
  	fi
  fi
- 
+
 -LSB_DESCRIPTION=$(lsb_release -d)
 -LSBS=($LSB_DESCRIPTION)
 -CURRENT_VERSION=${LSBS[2]}
@@ -85,7 +85,7 @@
 -        SystemRequirementResult=1;
      fi
  fi
- 
+
 -if [ "$SystemRequirementResult" -gt 0 ] && [ ! -z "$MIN_MAJOR" ];
 -then
 +# Check against MIN version
@@ -124,7 +124,7 @@
 -        SystemRequirementResult=1;
      fi
  fi
- 
+
 -if [ "$SystemRequirementResult" -lt 0 ];
 -then
 +if [ "$SystemRequirementResult" -lt 0 ]; then
